@@ -10,7 +10,8 @@ Requirements
 - Kibana 5.3.0 (To visualize the tweets)
 - Twitter auth keys
 
-# Python requirements
+Python requirements
+------------
 
 - Tweepy
 - Elasticsearch
