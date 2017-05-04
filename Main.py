@@ -17,7 +17,7 @@ def file():
 
 def main():
     if (len(sys.argv) > 1):
-        if(sys.argv[1] == 'file'):
+        if(sys.argv[1] == 'indexFromFile'):
             file()
         else:
             twitter()
