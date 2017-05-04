@@ -28,5 +28,5 @@ How to use
 Thanks to
 -----------
 
-bpb27 for providing the full history of Trumps twitter wall:
+bpb27 for providing the full history of Trumps twitter wall:  
 https://github.com/bpb27/trump_tweet_data_archive
