@@ -20,7 +20,7 @@ def index(tweets, es):
         dateTime = convertTime(time_stamp)
 
         for token in tokens:
-            es.index(index='twitter_read_test', doc_type='tweet', body={ 'timestamp': dateTime, 'text': token, })
+            es.index(index='twitter_file_index', doc_type='tweet', body={ 'timestamp': dateTime, 'text': token, })
 
         count += 1
         if (count % 100) == 0:
