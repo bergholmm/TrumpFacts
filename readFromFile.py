@@ -7,6 +7,8 @@ from tokenizeTweet import processText
 
 path = './Data'
 
+stopTokens = ('a', 'i', 't', 's', 'u', 'm')
+
 def convertTime(time_stamp):
     ts = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(time_stamp,'%a %b %d %H:%M:%S +0000 %Y'))
     return datetime.strptime(ts, '%Y-%m-%d %H:%M:%S')
@@ -20,7 +22,8 @@ def index(tweets, es):
         dateTime = convertTime(time_stamp)
 
         for token in tokens:
-            es.index(index='twitter_file_index', doc_type='tweet', body={ 'timestamp': dateTime, 'text': token, })
+            if token not in stopTokens:
+                es.index(index='twitter_file_index', doc_type='tweet', body={ 'timestamp': dateTime, 'text': token, })
 
         count += 1
         if (count % 100) == 0:

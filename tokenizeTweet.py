@@ -21,6 +21,8 @@ regex_str = [
     r'(?:\S)' # anything else
 ]
 
+stopTokens = ('!','.',':',',','"','-','?','…',';','&','(',')','\'','/','%','’','$','”','“','—')
+
 tokens_re = re.compile(r'('+'|'.join(regex_str)+')', re.VERBOSE | re.IGNORECASE)
 emoticon_re = re.compile(r'^'+emoticons_str+'$', re.VERBOSE | re.IGNORECASE)
 cachedStopWords = stopwords.words("english")
@@ -40,5 +42,5 @@ def preprocess(s, lowercase=False):
 def processText(text):
     text = removeStopWords(text)
     text = re.sub(r'(https|http)?:\/\/(\w|\.|\/|\?|\=|\&|\%)*\b', '', text, flags=re.MULTILINE)
-    text = "".join(c if c not in ('!','.',':',',','"','-','?','…',';','&','(',')','\'','/','%') else ' ' for c in text)
+    text = "".join(c if c not in stopTokens else ' ' for c in text)
     return preprocess(text)
