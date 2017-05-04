@@ -21,7 +21,7 @@ How to use
 
 - Start Elasticsearch and Kibana
 - Run 'python3 main.py' to fetch and index tweets from twitter
-- Run 'python3 main.py 'file'' to read and index tweets from /Data
+- Run 'python3 main.py 'indexFromFile'' to read and index tweets from /Data
 
 
 Thanks to
